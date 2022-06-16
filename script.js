@@ -165,23 +165,23 @@ const fetchMeteo = (city) =>
 
       const dateFive = document.createElement("p");
       dayFive.appendChild(dateFive);
-      const dateFiveData = data.list[31].dt;
+      const dateFiveData = data.list[32].dt;
       const dayFiveData = new Date(dateFiveData * 1000);
       dateFive.textContent = dayFiveData.toDateString();
 
       const iconFive = document.createElement("img");
       dayFive.appendChild(iconFive);
-      const iconFive_data = data.list[31].weather[0].icon;
+      const iconFive_data = data.list[32].weather[0].icon;
       const iconFive_link = `http://openweathermap.org/img/wn/${iconFive_data}.png`;
       iconFive.src = iconFive_link;
 
       const weatherFive = document.createElement("p");
       dayFive.appendChild(weatherFive);
-      weatherFive.textContent = data.list[31].weather[0].description;
+      weatherFive.textContent = data.list[32].weather[0].description;
 
       const tempFive = document.createElement("p");
       dayFive.appendChild(tempFive);
-      tempFive.textContent = data.list[31].main.temp + "°C";
+      tempFive.textContent = data.list[32].main.temp + "°C";
 
       //__________________________________________________________________
 
@@ -191,23 +191,23 @@ const fetchMeteo = (city) =>
 
       const dateSix = document.createElement("p");
       daySix.appendChild(dateSix);
-      const dateSixData = data.list[39].dt;
+      const dateSixData = data.list[38].dt;
       const daySixData = new Date(dateSixData * 1000);
       dateSix.textContent = daySixData.toDateString();
 
       const iconSix = document.createElement("img");
       daySix.appendChild(iconSix);
-      const iconSix_data = data.list[39].weather[0].icon;
+      const iconSix_data = data.list[38].weather[0].icon;
       const iconSix_link = `http://openweathermap.org/img/wn/${iconSix_data}.png`;
       iconSix.src = iconSix_link;
 
       const weatherSix = document.createElement("p");
       daySix.appendChild(weatherSix);
-      weatherSix.textContent = data.list[39].weather[0].description;
+      weatherSix.textContent = data.list[38].weather[0].description;
 
       const tempSix = document.createElement("p");
       daySix.appendChild(tempSix);
-      tempSix.textContent = data.list[39].main.temp + "°C";
+      tempSix.textContent = data.list[38].main.temp + "°C";
     })
     .catch(() => {
       alert("There is an error somewhere!");
