@@ -3,9 +3,7 @@
   font-family: "Antic Slab", serif;
 }
 * body {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#335fa1), color-stop(#007aa1), color-stop(#348e91), color-stop(#729c87), to(#a1a891));
-  background-image: linear-gradient(to right bottom, #335fa1, #007aa1, #348e91, #729c87, #a1a891);
-  height: 100vh;
+  background-color: #348e91;
 }
 * body main {
   width: 80%;
@@ -77,4 +75,39 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 50px;
+  margin-bottom: 50px;
+  padding: 5px;
+}
+* body main .weather--app .day_one .city_data .date {
+  color: rgb(19, 34, 85);
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+* body main .weather--app .day_one .city_data h2 {
+  font-size: xx-large;
+}
+* body main .weather--app .day_one .temp_data img {
+  width: 100px;
+}
+* body main .weather--app .day_one .temp_data .temp {
+  font-weight: bold;
+  font-size: x-large;
+  margin-bottom: 50px;
+}
+* body main .weather--app .container_fallowing_days {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  gap: 30px;
+}
+* body main .weather--app .container_fallowing_days .fallowing_days {
+  border-radius: 15px;
+  background-color: rgba(20, 88, 151, 0.13);
+  width: 230px;
 }/*# sourceMappingURL=style.css.map */

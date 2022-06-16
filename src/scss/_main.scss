@@ -1,15 +1,7 @@
 * {
   font-family: "Antic Slab", serif;
   body {
-    background-image: linear-gradient(
-      to right bottom,
-      #335fa1,
-      #007aa1,
-      #348e91,
-      #729c87,
-      #a1a891
-    );
-    height: 100vh;
+    background-color: #348e91;
     main {
       width: 80%;
       margin: auto;
@@ -66,6 +58,47 @@
           flex-flow: wrap;
           justify-content: space-around;
           align-items: center;
+          gap: 50px;
+          margin-bottom: 50px;
+          padding: 5px;
+
+          .city_data {
+            .date {
+              color: rgb(19, 34, 85);
+              font-weight: bold;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+            }
+
+            h2 {
+              font-size: xx-large;
+            }
+          }
+
+          .temp_data {
+            img {
+              width: 100px;
+            }
+
+            .temp {
+              font-weight: bold;
+              font-size: x-large;
+              margin-bottom: 50px;
+            }
+          }
+        }
+
+        .container_fallowing_days {
+          display: flex;
+          flex-flow: wrap;
+          justify-content: space-around;
+          gap: 30px;
+
+          .fallowing_days {
+            border-radius: 15px;
+            background-color: rgba(20, 88, 151, 0.13);
+            width: 230px;
+          }
         }
       }
     }
