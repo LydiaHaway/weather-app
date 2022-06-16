@@ -27,21 +27,6 @@
   text-align: center;
   border: none;
 }
-* body main .weather--app input::-webkit-input-placeholder {
-  color: darkblue;
-}
-* body main .weather--app input::-moz-placeholder {
-  color: darkblue;
-}
-* body main .weather--app input:-ms-input-placeholder {
-  color: darkblue;
-}
-* body main .weather--app input::-ms-input-placeholder {
-  color: darkblue;
-}
-* body main .weather--app input::placeholder {
-  color: darkblue;
-}
 * body main .weather--app input:focus {
   outline: none;
 }

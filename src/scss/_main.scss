@@ -23,10 +23,6 @@
           text-align: center;
           border: none;
 
-          &::placeholder {
-            color: darkblue;
-          }
-
           &:focus {
             outline: none;
           }
