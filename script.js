@@ -24,7 +24,9 @@ const fetchMeteo = (city) =>
 
       const dateOne = document.createElement("p");
       dateOne.setAttribute("class", "date");
-      dateOne.textContent = "Today";
+      const date = data.list[0].dt;
+      const day = new Date(date * 1000);
+      dateOne.textContent = day.toDateString();
       containerPartOne.appendChild(dateOne);
 
       const tempData = document.createElement("div");
@@ -67,6 +69,12 @@ const fetchMeteo = (city) =>
       humidity.textContent = "Humidity: " + data.list[0].main.humidity + "%";
       otherWeatherData.appendChild(humidity);
 
+      const wind = document.createElement("p");
+      const windSpeed = data.list[0].wind.speed;
+      const WindSpeedByKm = Math.floor(windSpeed * 3.6);
+      wind.textContent = "wind speed: " + WindSpeedByKm + " km/h";
+      otherWeatherData.appendChild(wind);
+
       //_____________________________________________
 
       const fallowing_day = document.createElement("article");
@@ -79,7 +87,9 @@ const fetchMeteo = (city) =>
 
       const dateTwo = document.createElement("p");
       dayTwo.appendChild(dateTwo);
-      dateTwo.textContent = "Tomorrow";
+      const dateTwoData = data.list[7].dt;
+      const dayTwoData = new Date(dateTwoData * 1000);
+      dateTwo.textContent = dayTwoData.toDateString();
 
       const iconTwo = document.createElement("img");
       dayTwo.appendChild(iconTwo);
@@ -93,11 +103,7 @@ const fetchMeteo = (city) =>
 
       const tempTwo = document.createElement("p");
       dayTwo.appendChild(tempTwo);
-      tempTwo.textContent =
-        data.list[7].main.temp_min +
-        "°C / " +
-        data.list[7].main.temp_max +
-        "°C";
+      tempTwo.textContent = data.list[7].main.temp + "°C";
 
       //_____________________________________________________________________________________________
 
@@ -107,7 +113,9 @@ const fetchMeteo = (city) =>
 
       const dateThree = document.createElement("p");
       dayThree.appendChild(dateThree);
-      dateThree.textContent = data.list[15].dt_txt;
+      const dateThreeData = data.list[15].dt;
+      const dayThreeData = new Date(dateThreeData * 1000);
+      dateThree.textContent = dayThreeData.toDateString();
 
       const iconThree = document.createElement("img");
       dayThree.appendChild(iconThree);
@@ -121,11 +129,7 @@ const fetchMeteo = (city) =>
 
       const tempThree = document.createElement("p");
       dayThree.appendChild(tempThree);
-      tempThree.textContent =
-        data.list[15].main.temp_min +
-        "°C / " +
-        data.list[15].main.temp_max +
-        "°C";
+      tempThree.textContent = data.list[15].main.temp + "°C";
 
       //______________________________________________________________________________________
 
@@ -135,7 +139,9 @@ const fetchMeteo = (city) =>
 
       const dateFour = document.createElement("p");
       dayFour.appendChild(dateFour);
-      dateFour.textContent = data.list[23].dt_txt;
+      const dateFourData = data.list[23].dt;
+      const dayFourData = new Date(dateFourData * 1000);
+      dateFour.textContent = dayFourData.toDateString();
 
       const iconFour = document.createElement("img");
       dayFour.appendChild(iconFour);
@@ -149,11 +155,7 @@ const fetchMeteo = (city) =>
 
       const tempFour = document.createElement("p");
       dayFour.appendChild(tempFour);
-      tempFour.textContent =
-        data.list[23].main.temp_min +
-        "°C / " +
-        data.list[23].main.temp_max +
-        "°C";
+      tempFour.textContent = data.list[23].main.temp + "°C";
 
       //________________________________________________________________________________________
 
@@ -163,7 +165,9 @@ const fetchMeteo = (city) =>
 
       const dateFive = document.createElement("p");
       dayFive.appendChild(dateFive);
-      dateFive.textContent = data.list[31].dt_txt;
+      const dateFiveData = data.list[31].dt;
+      const dayFiveData = new Date(dateFiveData * 1000);
+      dateFive.textContent = dayFiveData.toDateString();
 
       const iconFive = document.createElement("img");
       dayFive.appendChild(iconFive);
@@ -177,11 +181,7 @@ const fetchMeteo = (city) =>
 
       const tempFive = document.createElement("p");
       dayFive.appendChild(tempFive);
-      tempFive.textContent =
-        data.list[31].main.temp_min +
-        "°C / " +
-        data.list[31].main.temp_max +
-        "°C";
+      tempFive.textContent = data.list[31].main.temp + "°C";
 
       //__________________________________________________________________
 
@@ -191,7 +191,9 @@ const fetchMeteo = (city) =>
 
       const dateSix = document.createElement("p");
       daySix.appendChild(dateSix);
-      dateSix.textContent = data.list[39].dt_txt;
+      const dateSixData = data.list[39].dt;
+      const daySixData = new Date(dateSixData * 1000);
+      dateSix.textContent = daySixData.toDateString();
 
       const iconSix = document.createElement("img");
       daySix.appendChild(iconSix);
@@ -205,11 +207,7 @@ const fetchMeteo = (city) =>
 
       const tempSix = document.createElement("p");
       daySix.appendChild(tempSix);
-      tempSix.textContent =
-        data.list[39].main.temp_min +
-        "°C / " +
-        data.list[39].main.temp_max +
-        "°C";
+      tempSix.textContent = data.list[39].main.temp + "°C";
     })
     .catch(() => {
       alert("There is an error somewhere!");
