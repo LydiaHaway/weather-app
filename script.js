@@ -41,7 +41,7 @@ const fetchMeteo = (city) =>
 
       const tempOne = document.createElement("p");
       tempOne.setAttribute("class", "temp");
-      tempOne.textContent = data.list[0].main.temp + "°C";
+      tempOne.textContent = Math.floor(data.list[0].main.temp) + "°C";
       tempData.appendChild(tempOne);
 
       const otherWeatherData = document.createElement("div");
@@ -52,17 +52,17 @@ const fetchMeteo = (city) =>
       weatherOne.setAttribute("class", "weather");
       weatherOne.textContent =
         "Feels like " +
-        data.list[0].main.feels_like +
+        Math.floor(data.list[0].main.feels_like) +
         "°C, " +
         data.list[0].weather[0].description;
       otherWeatherData.appendChild(weatherOne);
 
       const min = document.createElement("p");
-      min.textContent = "Min: " + data.list[0].main.temp_min + "°C";
+      min.textContent = "Min: " + Math.floor(data.list[0].main.temp_min) + "°C";
       otherWeatherData.appendChild(min);
 
       const max = document.createElement("p");
-      max.textContent = "Max: " + data.list[0].main.temp_max + "°C";
+      max.textContent = "Max: " + Math.floor(data.list[0].main.temp_max) + "°C";
       otherWeatherData.appendChild(max);
 
       const humidity = document.createElement("p");
@@ -103,7 +103,7 @@ const fetchMeteo = (city) =>
 
       const tempTwo = document.createElement("p");
       dayTwo.appendChild(tempTwo);
-      tempTwo.textContent = data.list[7].main.temp + "°C";
+      tempTwo.textContent = Math.floor(data.list[7].main.temp) + "°C";
 
       //_____________________________________________________________________________________________
 
@@ -129,7 +129,7 @@ const fetchMeteo = (city) =>
 
       const tempThree = document.createElement("p");
       dayThree.appendChild(tempThree);
-      tempThree.textContent = data.list[15].main.temp + "°C";
+      tempThree.textContent = Math.floor(data.list[15].main.temp) + "°C";
 
       //______________________________________________________________________________________
 
@@ -155,7 +155,7 @@ const fetchMeteo = (city) =>
 
       const tempFour = document.createElement("p");
       dayFour.appendChild(tempFour);
-      tempFour.textContent = data.list[23].main.temp + "°C";
+      tempFour.textContent = Math.floor(data.list[23].main.temp) + "°C";
 
       //________________________________________________________________________________________
 
@@ -165,23 +165,23 @@ const fetchMeteo = (city) =>
 
       const dateFive = document.createElement("p");
       dayFive.appendChild(dateFive);
-      const dateFiveData = data.list[32].dt;
+      const dateFiveData = data.list[31].dt;
       const dayFiveData = new Date(dateFiveData * 1000);
       dateFive.textContent = dayFiveData.toDateString();
 
       const iconFive = document.createElement("img");
       dayFive.appendChild(iconFive);
-      const iconFive_data = data.list[32].weather[0].icon;
+      const iconFive_data = data.list[31].weather[0].icon;
       const iconFive_link = `http://openweathermap.org/img/wn/${iconFive_data}.png`;
       iconFive.src = iconFive_link;
 
       const weatherFive = document.createElement("p");
       dayFive.appendChild(weatherFive);
-      weatherFive.textContent = data.list[32].weather[0].description;
+      weatherFive.textContent = data.list[31].weather[0].description;
 
       const tempFive = document.createElement("p");
       dayFive.appendChild(tempFive);
-      tempFive.textContent = data.list[32].main.temp + "°C";
+      tempFive.textContent = Math.floor(data.list[31].main.temp) + "°C";
 
       //__________________________________________________________________
 
@@ -207,7 +207,7 @@ const fetchMeteo = (city) =>
 
       const tempSix = document.createElement("p");
       daySix.appendChild(tempSix);
-      tempSix.textContent = data.list[38].main.temp + "°C";
+      tempSix.textContent = Math.floor(data.list[38].main.temp) + "°C";
     })
     .catch(() => {
       alert("There is an error somewhere!");
