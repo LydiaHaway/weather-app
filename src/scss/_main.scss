@@ -1,7 +1,7 @@
 * {
   font-family: "Antic Slab", serif;
   body {
-    background-color: #348e91;
+    background-color: $backgroundColor;
     main {
       width: 80%;
       margin: auto;
@@ -9,7 +9,7 @@
         margin-top: 50px;
         text-transform: uppercase;
         text-align: center;
-        color: white;
+        color: $white;
       }
 
       .weather--app {
@@ -19,7 +19,7 @@
           height: 30px;
           border-radius: 5px;
           margin-bottom: 15px;
-          background-color: lightgray;
+          background-color: $lightGrey;
           text-align: center;
           border: none;
 
@@ -33,16 +33,16 @@
           width: 120px;
           text-transform: uppercase;
           border-radius: 5px;
-          background-color: lightgray;
-          border-color: lightgray;
+          background-color: $lightGrey;
+          border-color: $lightGrey;
           font-weight: bold;
           cursor: pointer;
           margin-bottom: 30px;
           letter-spacing: 2px;
 
           &:hover {
-            background-color: lightblue;
-            border-color: lightblue;
+            background-color: $lightBlue;
+            border-color: $lightBlue;
           }
         }
 
@@ -51,7 +51,7 @@
           padding-top: 20px;
           padding-bottom: 20px;
           border-radius: 15px;
-          background-color: rgba(20, 88, 151, 0.13);
+          background-color: $backgroundColorTransp;
           display: flex;
           flex-flow: wrap;
           justify-content: space-around;
@@ -62,7 +62,7 @@
 
           .city_data {
             .date {
-              color: rgb(19, 34, 85);
+              color: $darkBlue;
               font-weight: bold;
               letter-spacing: 2px;
               text-transform: uppercase;
@@ -79,7 +79,7 @@
             }
 
             .description {
-              color: rgb(19, 34, 85);
+              color: $darkBlue;
               font-size: large;
             }
 
@@ -99,7 +99,7 @@
 
           .fallowing_days {
             border-radius: 15px;
-            background-color: rgba(20, 88, 151, 0.13);
+            background-color: $backgroundColorTransp;
             width: 230px;
           }
         }

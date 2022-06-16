@@ -23,7 +23,7 @@
   height: 30px;
   border-radius: 5px;
   margin-bottom: 15px;
-  background-color: lightgray;
+  background-color: #d3d3d3;
   text-align: center;
   border: none;
 }
@@ -35,16 +35,16 @@
   width: 120px;
   text-transform: uppercase;
   border-radius: 5px;
-  background-color: lightgray;
-  border-color: lightgray;
+  background-color: #d3d3d3;
+  border-color: #d3d3d3;
   font-weight: bold;
   cursor: pointer;
   margin-bottom: 30px;
   letter-spacing: 2px;
 }
 * body main .weather--app button:hover {
-  background-color: lightblue;
-  border-color: lightblue;
+  background-color: #add8e6;
+  border-color: #add8e6;
 }
 * body main .weather--app .day_one {
   margin: auto;
