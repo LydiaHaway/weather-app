@@ -78,10 +78,13 @@
 * body main .weather--app .day_one .temp_data img {
   width: 100px;
 }
+* body main .weather--app .day_one .temp_data .description {
+  color: rgb(19, 34, 85);
+  font-size: large;
+}
 * body main .weather--app .day_one .temp_data .temp {
   font-weight: bold;
   font-size: x-large;
-  margin-bottom: 50px;
 }
 * body main .weather--app .container_fallowing_days {
   display: -webkit-box;

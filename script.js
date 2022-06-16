@@ -39,6 +39,11 @@ const fetchMeteo = (city) =>
       const icon_link = `http://openweathermap.org/img/wn/${icon_data}.png`;
       icon.src = icon_link;
 
+      const weatherDescription = document.createElement("p");
+      weatherDescription.setAttribute("class", "description");
+      weatherDescription.textContent = data.list[0].weather[0].description;
+      tempData.appendChild(weatherDescription);
+
       const tempOne = document.createElement("p");
       tempOne.setAttribute("class", "temp");
       tempOne.textContent = Math.floor(data.list[0].main.temp) + "°C";
@@ -51,10 +56,7 @@ const fetchMeteo = (city) =>
       const weatherOne = document.createElement("p");
       weatherOne.setAttribute("class", "weather");
       weatherOne.textContent =
-        "Feels like " +
-        Math.floor(data.list[0].main.feels_like) +
-        "°C, " +
-        data.list[0].weather[0].description;
+        "Feels like " + Math.floor(data.list[0].main.feels_like) + "°C";
       otherWeatherData.appendChild(weatherOne);
 
       const min = document.createElement("p");
