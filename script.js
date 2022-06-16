@@ -18,14 +18,14 @@ const fetchMeteo = (city) =>
       dayOne.appendChild(containerPartOne);
       containerPartOne.setAttribute("class", "city_data");
 
+      const city = document.createElement("h2");
+      city.textContent = data.city.name + ", " + data.city.country;
+      containerPartOne.appendChild(city);
+
       const dateOne = document.createElement("p");
       dateOne.setAttribute("class", "date");
       dateOne.textContent = "Today";
       containerPartOne.appendChild(dateOne);
-
-      const city = document.createElement("h2");
-      city.textContent = data.city.name + ", " + data.city.country;
-      containerPartOne.appendChild(city);
 
       const tempData = document.createElement("div");
       tempData.setAttribute("class", "temp_data");
@@ -210,6 +210,9 @@ const fetchMeteo = (city) =>
         "°C / " +
         data.list[39].main.temp_max +
         "°C";
+    })
+    .catch(() => {
+      alert("There is an error somewhere!");
     });
 
 //________________________________________________________________________________________________
