@@ -205,6 +205,43 @@ const fetchMeteo = (city) =>
 
       //__________________________________________________________
 
+      window.localStorage.LastCityAsk = city.textContent;
+    })
+
+    .catch(() => {
+      alert("There is an error somewhere!");
+    });
+
+//_________________________________________________________________
+
+const fetcGraph = (city) =>
+  fetch(
+    `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=25a1023256bf6e806f82892c9dd8fe40`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      const newDiv = document.createElement("div");
+      app.appendChild(newDiv);
+      newDiv.setAttribute("class", "graph");
+      const canvas = document.createElement("canvas");
+      newDiv.appendChild(canvas);
+      canvas.setAttribute("id", "myChart");
+
+      const date = data.list[0].dt;
+      const day = new Date(date * 1000);
+
+      const dateTwoData = data.list[7].dt;
+      const dayTwoData = new Date(dateTwoData * 1000);
+
+      const dateThreeData = data.list[15].dt;
+      const dayThreeData = new Date(dateThreeData * 1000);
+
+      const dateFourData = data.list[23].dt;
+      const dayFourData = new Date(dateFourData * 1000);
+
+      const dateFiveData = data.list[31].dt;
+      const dayFiveData = new Date(dateFiveData * 1000);
+
       const labels = [
         day.toDateString(),
         dayTwoData.toDateString(),
@@ -217,7 +254,11 @@ const fetchMeteo = (city) =>
         labels: labels,
         datasets: [
           {
-            label: "Graph for the fallowing days",
+            label:
+              "Graph for the fallowing days for " +
+              data.city.name +
+              ", " +
+              data.city.country,
             backgroundColor: "rgb(255,49,83)",
             borderColor: "rgb(255,49,83)",
             data: [
@@ -238,13 +279,6 @@ const fetchMeteo = (city) =>
       };
 
       const myChart = new Chart(document.getElementById("myChart"), config);
-
-      //__________________________________________________________________
-
-      window.localStorage.LastCityAsk = city.textContent;
-    })
-    .catch(() => {
-      alert("There is an error somewhere!");
     });
 
 //________________________________________________________________________________________________
@@ -252,6 +286,7 @@ const fetchMeteo = (city) =>
 buttonSubmit.addEventListener("click", () => {
   randomPictures();
   fetchMeteo(city.value);
+  fetcGraph(city.value);
 
   city.value = "";
 });
@@ -260,6 +295,7 @@ document.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     randomPictures();
     fetchMeteo(city.value);
+    fetcGraph(city.value);
 
     city.value = "";
   }
