@@ -214,7 +214,7 @@ const fetchMeteo = (city) =>
 
 //_________________________________________________________________
 
-const fetcGraph = (city) =>
+const fetchGraph = (city) =>
   fetch(
     `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=25a1023256bf6e806f82892c9dd8fe40`
   )
@@ -286,7 +286,7 @@ const fetcGraph = (city) =>
 buttonSubmit.addEventListener("click", () => {
   randomPictures();
   fetchMeteo(city.value);
-  fetcGraph(city.value);
+  fetchGraph(city.value);
 
   city.value = "";
 });
@@ -295,7 +295,7 @@ document.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     randomPictures();
     fetchMeteo(city.value);
-    fetcGraph(city.value);
+    fetchGraph(city.value);
 
     city.value = "";
   }
