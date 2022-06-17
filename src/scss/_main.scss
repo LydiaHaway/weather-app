@@ -37,7 +37,7 @@
           width: 300px;
           height: 30px;
           border-radius: 5px;
-          margin-bottom: 15px;
+          margin-bottom: 10px;
           background-color: $lightGrey;
           text-align: center;
           border: none;
@@ -53,25 +53,9 @@
           }
         }
 
-        .submit {
+        button {
           height: 30px;
-          width: 30px;
-          background-color: $lightGrey;
-          border: none;
-          cursor: pointer;
-          border-radius: 5px;
-
-          &:hover {
-            background-color: $lightBlue;
-            border-color: $lightBlue;
-            box-shadow: 0 0 12px 0px $lightBlue;
-            transition: 0.5s;
-          }
-        }
-
-        .clear {
-          height: 30px;
-          width: 120px;
+          width: 100px;
           text-transform: uppercase;
           border-radius: 15px;
           background-color: $lightGrey;
