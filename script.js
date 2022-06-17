@@ -226,3 +226,5 @@ document.addEventListener("keypress", (e) => {
 buttonClear.addEventListener("click", () => {
   location.reload();
 });
+
+//__________________________________________________________

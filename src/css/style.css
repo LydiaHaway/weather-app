@@ -47,6 +47,9 @@
   outline: none;
   border: 1px solid #6abeda;
 }
+* body main .weather--app .note {
+  color: rgb(19, 34, 85);
+}
 * body main .weather--app button {
   height: 30px;
   width: 120px;
