@@ -1,4 +1,5 @@
-const button = document.querySelector("button");
+const buttonSubmit = document.querySelector(".submit");
+const buttonClear = document.querySelector(".clear");
 const city = document.querySelector("#city");
 const app = document.querySelector(".weather--app");
 
@@ -228,7 +229,7 @@ const fetchMeteo = (city) =>
 
 //________________________________________________________________________________________________
 
-button.addEventListener("click", () => {
+buttonSubmit.addEventListener("click", () => {
   randomPictures();
   fetchMeteo(city.value);
 });
@@ -238,4 +239,8 @@ document.addEventListener("keypress", (e) => {
     randomPictures();
     fetchMeteo(city.value);
   }
+});
+
+buttonClear.addEventListener("click", () => {
+  location.reload();
 });
