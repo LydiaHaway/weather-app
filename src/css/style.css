@@ -1,4 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap");
+@-webkit-keyframes animation {
+  0% {
+    left: 0px;
+  }
+  25% {
+    left: 10px;
+  }
+  50% {
+    left: 20px;
+  }
+  75% {
+    left: 10%;
+  }
+  100% {
+    left: 0px;
+  }
+}
+@keyframes animation {
+  0% {
+    left: 0px;
+  }
+  25% {
+    left: 10px;
+  }
+  50% {
+    left: 20px;
+  }
+  75% {
+    left: 10%;
+  }
+  100% {
+    left: 0px;
+  }
+}
 * {
   font-family: "Antic Slab", serif;
 }

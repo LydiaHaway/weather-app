@@ -12,6 +12,7 @@ function randomPictures() {
   const picturesRandom = document.createElement("img");
   containerPictures.appendChild(picturesRandom);
   picturesRandom.src = `https://source.unsplash.com/random/?${city.value}`;
+  picturesRandom.alt = "city_illustration";
 }
 
 //__________________________________________________________________________________________
@@ -50,6 +51,7 @@ const fetchMeteo = (city) =>
       const icon_data = data.list[0].weather[0].icon;
       const icon_link = `http://openweathermap.org/img/wn/${icon_data}.png`;
       icon.src = icon_link;
+      icon.alt = "icon";
 
       const weatherDescription = document.createElement("p");
       weatherDescription.setAttribute("class", "description");
@@ -110,6 +112,7 @@ const fetchMeteo = (city) =>
       const iconTwo_data = data.list[7].weather[0].icon;
       const iconTwo_link = `http://openweathermap.org/img/wn/${iconTwo_data}.png`;
       iconTwo.src = iconTwo_link;
+      iconTwo.alt = "icon";
 
       const weatherTwo = document.createElement("p");
       dayTwo.appendChild(weatherTwo);
@@ -136,6 +139,7 @@ const fetchMeteo = (city) =>
       const iconThree_data = data.list[15].weather[0].icon;
       const iconThree_link = `http://openweathermap.org/img/wn/${iconThree_data}.png`;
       iconThree.src = iconThree_link;
+      iconThree.alt = "icon";
 
       const weatherThree = document.createElement("p");
       dayThree.appendChild(weatherThree);
@@ -162,6 +166,7 @@ const fetchMeteo = (city) =>
       const iconFour_data = data.list[23].weather[0].icon;
       const iconFour_link = `http://openweathermap.org/img/wn/${iconFour_data}.png`;
       iconFour.src = iconFour_link;
+      iconFour.alt = "icon";
 
       const weatherFour = document.createElement("p");
       dayFour.appendChild(weatherFour);
@@ -188,6 +193,7 @@ const fetchMeteo = (city) =>
       const iconFive_data = data.list[31].weather[0].icon;
       const iconFive_link = `http://openweathermap.org/img/wn/${iconFive_data}.png`;
       iconFive.src = iconFive_link;
+      iconFive.alt = "icon";
 
       const weatherFive = document.createElement("p");
       dayFive.appendChild(weatherFive);
