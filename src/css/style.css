@@ -61,6 +61,9 @@
 * body main .weather--app {
   text-align: center;
 }
+* body main .weather--app .note {
+  color: rgb(19, 34, 85);
+}
 * body main .weather--app input {
   width: 300px;
   height: 30px;
@@ -81,10 +84,23 @@
   outline: none;
   border: 1px solid #6abeda;
 }
-* body main .weather--app .note {
-  color: rgb(19, 34, 85);
+* body main .weather--app .submit {
+  height: 30px;
+  width: 30px;
+  background-color: #a9cde6;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
-* body main .weather--app button {
+* body main .weather--app .submit:hover {
+  background-color: #6abeda;
+  border-color: #6abeda;
+  -webkit-box-shadow: 0 0 12px 0px #6abeda;
+          box-shadow: 0 0 12px 0px #6abeda;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+* body main .weather--app .clear {
   height: 30px;
   width: 120px;
   text-transform: uppercase;
@@ -98,7 +114,7 @@
   -webkit-box-shadow: 0 0 12px 0px #a9cde6;
           box-shadow: 0 0 12px 0px #a9cde6;
 }
-* body main .weather--app button:hover {
+* body main .weather--app .clear:hover {
   background-color: #6abeda;
   border-color: #6abeda;
   -webkit-box-shadow: 0 0 12px 0px #6abeda;

@@ -28,6 +28,11 @@
 
       .weather--app {
         text-align: center;
+
+        .note {
+          color: $darkBlue;
+        }
+
         input {
           width: 300px;
           height: 30px;
@@ -48,11 +53,23 @@
           }
         }
 
-        .note {
-          color: $darkBlue;
+        .submit {
+          height: 30px;
+          width: 30px;
+          background-color: $lightGrey;
+          border: none;
+          cursor: pointer;
+          border-radius: 5px;
+
+          &:hover {
+            background-color: $lightBlue;
+            border-color: $lightBlue;
+            box-shadow: 0 0 12px 0px $lightBlue;
+            transition: 0.5s;
+          }
         }
 
-        button {
+        .clear {
           height: 30px;
           width: 120px;
           text-transform: uppercase;
