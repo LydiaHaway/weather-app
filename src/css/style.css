@@ -176,5 +176,12 @@
   width: 230px;
 }
 * body main .weather--app .graph {
-  margin-bottom: 50px;
+  padding-bottom: 50px;
+  width: 500px;
+  margin: auto;
+}
+@media screen and (max-width: 600px) {
+  * body main .weather--app .graph {
+    width: 100%;
+  }
 }/*# sourceMappingURL=style.css.map */

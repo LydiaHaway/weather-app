@@ -145,7 +145,13 @@
         }
 
         .graph {
-          margin-bottom: 50px;
+          padding-bottom: 50px;
+          width: 500px;
+          margin: auto;
+
+          @media screen and (max-width: 600px) {
+            width: 100%;
+          }
         }
       }
     }
