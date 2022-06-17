@@ -4,6 +4,17 @@ const app = document.querySelector(".weather--app");
 
 //________________________________________________________________________
 
+function randomPictures() {
+  const containerPictures = document.createElement("div");
+  app.appendChild(containerPictures);
+  containerPictures.setAttribute("class", "containerPictures");
+  const picturesRandom = document.createElement("img");
+  containerPictures.appendChild(picturesRandom);
+  picturesRandom.src = `https://source.unsplash.com/random/?${city.value}`;
+}
+
+//________________________________________________________________________________________
+
 const fetchMeteo = (city) =>
   fetch(
     `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=25a1023256bf6e806f82892c9dd8fe40`
@@ -218,11 +229,13 @@ const fetchMeteo = (city) =>
 //________________________________________________________________________________________________
 
 button.addEventListener("click", () => {
+  randomPictures();
   fetchMeteo(city.value);
 });
 
 document.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
+    randomPictures();
     fetchMeteo(city.value);
   }
 });

@@ -46,6 +46,19 @@
           }
         }
 
+        .containerPictures {
+          width: 80%;
+          margin: auto;
+          margin-bottom: 50px;
+          img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 4px solid $backgroundColorTransp;
+          }
+        }
+
         .day_one {
           margin: auto;
           padding-top: 20px;

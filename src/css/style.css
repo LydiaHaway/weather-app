@@ -46,6 +46,19 @@
   background-color: #add8e6;
   border-color: #add8e6;
 }
+* body main .weather--app .containerPictures {
+  width: 80%;
+  margin: auto;
+  margin-bottom: 50px;
+}
+* body main .weather--app .containerPictures img {
+  width: 100%;
+  height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px;
+  border: 4px solid rgba(20, 88, 151, 0.13);
+}
 * body main .weather--app .day_one {
   margin: auto;
   padding-top: 20px;
