@@ -222,6 +222,8 @@ const fetchMeteo = (city) =>
       const tempSix = document.createElement("p");
       daySix.appendChild(tempSix);
       tempSix.textContent = Math.floor(data.list[38].main.temp) + "°C";
+
+      window.localStorage.LastCityAsk = city.textContent;
     })
     .catch(() => {
       alert("There is an error somewhere!");
