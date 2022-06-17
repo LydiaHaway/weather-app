@@ -3,8 +3,8 @@
   font-family: "Antic Slab", serif;
 }
 * body {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#051937), color-stop(#004d7a), color-stop(#008793), color-stop(#00bf72), to(#a8eb12));
-  background-image: linear-gradient(to right bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#4169a6), color-stop(#008dc1), color-stop(#00adb2), color-stop(#00c580), to(#a7d345));
+  background-image: linear-gradient(to right top, #4169a6, #008dc1, #00adb2, #00c580, #a7d345);
   background-attachment: fixed;
 }
 * body main {

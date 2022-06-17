@@ -197,6 +197,42 @@ const fetchMeteo = (city) =>
       dayFive.appendChild(tempFive);
       tempFive.textContent = Math.floor(data.list[31].main.temp) + "°C";
 
+      //__________________________________________________________
+
+      const labels = [
+        day.toDateString(),
+        dayTwoData.toDateString(),
+        dayThreeData.toDateString(),
+        dayFourData.toDateString(),
+        dayFiveData.toDateString(),
+      ];
+
+      const dataGraph = {
+        labels: labels,
+        datasets: [
+          {
+            label: "Graph for the fallowing days",
+            backgroundColor: "rgb(255,49,83)",
+            borderColor: "rgb(255,49,83)",
+            data: [
+              Math.floor(data.list[0].main.temp),
+              Math.floor(data.list[7].main.temp),
+              Math.floor(data.list[15].main.temp),
+              Math.floor(data.list[23].main.temp),
+              Math.floor(data.list[31].main.temp),
+            ],
+          },
+        ],
+      };
+
+      const config = {
+        type: "line",
+        data: dataGraph,
+        options: {},
+      };
+
+      const myChart = new Chart(document.getElementById("myChart"), config);
+
       //__________________________________________________________________
 
       window.localStorage.LastCityAsk = city.textContent;
@@ -226,5 +262,3 @@ document.addEventListener("keypress", (e) => {
 buttonClear.addEventListener("click", () => {
   location.reload();
 });
-
-//__________________________________________________________
