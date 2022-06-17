@@ -14,7 +14,7 @@ function randomPictures() {
   picturesRandom.src = `https://source.unsplash.com/random/?${city.value}`;
 }
 
-//________________________________________________________________________________________
+//__________________________________________________________________________________________
 
 const fetchMeteo = (city) =>
   fetch(
@@ -234,12 +234,14 @@ const fetchMeteo = (city) =>
 buttonSubmit.addEventListener("click", () => {
   randomPictures();
   fetchMeteo(city.value);
+  city.value = "";
 });
 
 document.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     randomPictures();
     fetchMeteo(city.value);
+    city.value = "";
   }
 });
 
