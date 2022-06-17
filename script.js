@@ -286,7 +286,11 @@ const fetchGraph = (city) =>
 buttonSubmit.addEventListener("click", () => {
   randomPictures();
   fetchMeteo(city.value);
-  fetchGraph(city.value);
+
+  if (!buttonSubmit.dataset.clicked) {
+    fetchGraph(city.value);
+    buttonSubmit.dataset.clicked = "1";
+  }
 
   city.value = "";
 });
@@ -295,7 +299,6 @@ document.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     randomPictures();
     fetchMeteo(city.value);
-    fetchGraph(city.value);
 
     city.value = "";
   }
