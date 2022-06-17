@@ -199,30 +199,6 @@ const fetchMeteo = (city) =>
 
       //__________________________________________________________________
 
-      const daySix = document.createElement("div");
-      fallowing_day.appendChild(daySix);
-      daySix.setAttribute("class", "fallowing_days");
-
-      const dateSix = document.createElement("p");
-      daySix.appendChild(dateSix);
-      const dateSixData = data.list[38].dt;
-      const daySixData = new Date(dateSixData * 1000);
-      dateSix.textContent = daySixData.toDateString();
-
-      const iconSix = document.createElement("img");
-      daySix.appendChild(iconSix);
-      const iconSix_data = data.list[38].weather[0].icon;
-      const iconSix_link = `http://openweathermap.org/img/wn/${iconSix_data}.png`;
-      iconSix.src = iconSix_link;
-
-      const weatherSix = document.createElement("p");
-      daySix.appendChild(weatherSix);
-      weatherSix.textContent = data.list[38].weather[0].description;
-
-      const tempSix = document.createElement("p");
-      daySix.appendChild(tempSix);
-      tempSix.textContent = Math.floor(data.list[38].main.temp) + "°C";
-
       window.localStorage.LastCityAsk = city.textContent;
     })
     .catch(() => {
@@ -234,6 +210,7 @@ const fetchMeteo = (city) =>
 buttonSubmit.addEventListener("click", () => {
   randomPictures();
   fetchMeteo(city.value);
+
   city.value = "";
 });
 
@@ -241,6 +218,7 @@ document.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     randomPictures();
     fetchMeteo(city.value);
+
     city.value = "";
   }
 });

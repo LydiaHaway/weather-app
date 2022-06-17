@@ -1,12 +1,26 @@
 * {
   font-family: "Antic Slab", serif;
   body {
-    background-color: $backgroundColor;
+    background-image: linear-gradient(
+      to right bottom,
+      #051937,
+      #004d7a,
+      #008793,
+      #00bf72,
+      #a8eb12
+    );
+    background-attachment: fixed;
     main {
-      width: 80%;
+      width: 60%;
       margin: auto;
+      padding: 50px;
+
+      @media screen and (max-width: 720px) {
+        width: 80%;
+      }
       h1 {
         margin-top: 50px;
+        margin-bottom: 100px;
         text-transform: uppercase;
         text-align: center;
         color: $white;
@@ -15,16 +29,22 @@
       .weather--app {
         text-align: center;
         input {
-          width: 200px;
+          width: 300px;
           height: 30px;
           border-radius: 5px;
           margin-bottom: 15px;
           background-color: $lightGrey;
           text-align: center;
           border: none;
+          box-shadow: 0px 0px 12px 0px $lightBlue;
+
+          @media screen and (max-width: 430px) {
+            width: 80%;
+          }
 
           &:focus {
             outline: none;
+            border: 1px solid $lightBlue;
           }
         }
 
@@ -32,17 +52,20 @@
           height: 30px;
           width: 120px;
           text-transform: uppercase;
-          border-radius: 5px;
+          border-radius: 15px;
           background-color: $lightGrey;
           border-color: $lightGrey;
           font-weight: bold;
           cursor: pointer;
           margin-bottom: 30px;
           letter-spacing: 2px;
+          box-shadow: 0 0 12px 0px $lightGrey;
 
           &:hover {
             background-color: $lightBlue;
             border-color: $lightBlue;
+            box-shadow: 0 0 12px 0px $lightBlue;
+            transition: 0.5s;
           }
         }
 
@@ -52,7 +75,7 @@
           margin-bottom: 50px;
           img {
             width: 100%;
-            height: 500px;
+            height: 300px;
             object-fit: cover;
             border-radius: 15px;
             border: 4px solid $backgroundColorTransp;
