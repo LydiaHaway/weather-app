@@ -6,25 +6,5 @@ $white: white;
 $lightGrey: #a9cde6;
 $lightBlue: #6abeda;
 $darkBlue: rgb(19, 34, 85);
-
-@keyframes animation {
-  0% {
-    left: 0px;
-  }
-
-  25% {
-    left: 10px;
-  }
-
-  50% {
-    left: 20px;
-  }
-
-  75% {
-    left: 10%;
-  }
-
-  100% {
-    left: 0px;
-  }
-}
+$green: #00c580;
+$lightGreen: #46ffbe;

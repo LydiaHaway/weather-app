@@ -1,38 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Antic+Slab&display=swap");
-@-webkit-keyframes animation {
-  0% {
-    left: 0px;
-  }
-  25% {
-    left: 10px;
-  }
-  50% {
-    left: 20px;
-  }
-  75% {
-    left: 10%;
-  }
-  100% {
-    left: 0px;
-  }
-}
-@keyframes animation {
-  0% {
-    left: 0px;
-  }
-  25% {
-    left: 10px;
-  }
-  50% {
-    left: 20px;
-  }
-  75% {
-    left: 10%;
-  }
-  100% {
-    left: 0px;
-  }
-}
 * {
   font-family: "Antic Slab", serif;
 }
@@ -49,6 +15,11 @@
 @media screen and (max-width: 720px) {
   * body main {
     width: 80%;
+  }
+}
+@media screen and (max-width: 430px) {
+  * body main {
+    width: 70%;
   }
 }
 * body main h1 {
@@ -77,14 +48,24 @@
 }
 @media screen and (max-width: 430px) {
   * body main .weather--app input {
-    width: 80%;
+    width: 70%;
   }
 }
 * body main .weather--app input:focus {
   outline: none;
   border: 1px solid #6abeda;
 }
-* body main .weather--app button {
+* body main .weather--app .submit {
+  height: 30px;
+  width: 30px;
+  background-color: #00c580;
+  border: none;
+  cursor: pointer;
+}
+* body main .weather--app .submit:hover {
+  background-color: #46ffbe;
+}
+* body main .weather--app .clear {
   height: 30px;
   width: 100px;
   text-transform: uppercase;
@@ -98,7 +79,7 @@
   -webkit-box-shadow: 0 0 12px 0px #a9cde6;
           box-shadow: 0 0 12px 0px #a9cde6;
 }
-* body main .weather--app button:hover {
+* body main .weather--app .clear:hover {
   background-color: #6abeda;
   border-color: #6abeda;
   -webkit-box-shadow: 0 0 12px 0px #6abeda;
