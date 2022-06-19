@@ -296,6 +296,7 @@ const fetchGraph = (city) =>
 buttonSubmit.addEventListener("click", () => {
   randomPictures();
   fetchMeteo(city.value);
+
   fetchGraph(city.value);
 
   city.value = "";
