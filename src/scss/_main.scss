@@ -161,15 +161,15 @@
             width: 230px;
           }
         }
+      }
 
-        .graph {
-          padding-bottom: 50px;
-          width: 500px;
-          margin: auto;
+      .graph {
+        padding-bottom: 50px;
+        width: 500px;
+        margin: auto;
 
-          @media screen and (max-width: 600px) {
-            width: 100%;
-          }
+        @media screen and (max-width: 600px) {
+          width: 100%;
         }
       }
     }

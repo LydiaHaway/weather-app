@@ -156,13 +156,13 @@
   background-color: rgba(20, 88, 151, 0.11);
   width: 230px;
 }
-* body main .weather--app .graph {
+* body main .graph {
   padding-bottom: 50px;
   width: 500px;
   margin: auto;
 }
 @media screen and (max-width: 600px) {
-  * body main .weather--app .graph {
+  * body main .graph {
     width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */

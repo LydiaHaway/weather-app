@@ -220,13 +220,6 @@ const fetchGraph = (city) =>
   )
     .then((response) => response.json())
     .then((data) => {
-      const newDiv = document.createElement("div");
-      app.appendChild(newDiv);
-      newDiv.setAttribute("class", "graph");
-      const canvas = document.createElement("canvas");
-      newDiv.appendChild(canvas);
-      canvas.setAttribute("id", "myChart");
-
       const date = data.list[0].dt;
       const day = new Date(date * 1000);
 
@@ -242,43 +235,60 @@ const fetchGraph = (city) =>
       const dateFiveData = data.list[31].dt;
       const dayFiveData = new Date(dateFiveData * 1000);
 
-      const labels = [
-        day.toDateString(),
-        dayTwoData.toDateString(),
-        dayThreeData.toDateString(),
-        dayFourData.toDateString(),
-        dayFiveData.toDateString(),
-      ];
+      //____________________________
 
-      const dataGraph = {
-        labels: labels,
-        datasets: [
-          {
-            label:
-              "Graph for the fallowing days for " +
-              data.city.name +
-              ", " +
-              data.city.country,
-            backgroundColor: "rgb(255,49,83)",
-            borderColor: "rgb(255,49,83)",
-            data: [
-              Math.floor(data.list[0].main.temp),
-              Math.floor(data.list[7].main.temp),
-              Math.floor(data.list[15].main.temp),
-              Math.floor(data.list[23].main.temp),
-              Math.floor(data.list[31].main.temp),
-            ],
-          },
-        ],
-      };
+      let chartStatus = Chart.getChart("myChart");
+      if (chartStatus != undefined) {
+        chartStatus.destroy();
+      }
 
-      const config = {
+      const ctx = document.getElementById("myChart").getContext("2d");
+      const myChart = new Chart(ctx, {
         type: "line",
-        data: dataGraph,
+        data: {
+          labels: [
+            day.toDateString(),
+            dayTwoData.toDateString(),
+            dayThreeData.toDateString(),
+            dayFourData.toDateString(),
+            dayFiveData.toDateString(),
+          ],
+          datasets: [
+            {
+              label:
+                "Graph for the fallowing days for " +
+                data.city.name +
+                ", " +
+                data.city.country,
+              data: [
+                Math.floor(data.list[0].main.temp),
+                Math.floor(data.list[7].main.temp),
+                Math.floor(data.list[15].main.temp),
+                Math.floor(data.list[23].main.temp),
+                Math.floor(data.list[31].main.temp),
+              ],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(255, 159, 64, 0.2)",
+              ],
+              borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(255, 159, 64, 1)",
+              ],
+              borderWidth: 1,
+            },
+          ],
+        },
         options: {},
-      };
-
-      const myChart = new Chart(document.getElementById("myChart"), config);
+      });
     });
 
 //________________________________________________________________________________________________
@@ -286,11 +296,7 @@ const fetchGraph = (city) =>
 buttonSubmit.addEventListener("click", () => {
   randomPictures();
   fetchMeteo(city.value);
-
-  if (!buttonSubmit.dataset.clicked) {
-    fetchGraph(city.value);
-    buttonSubmit.dataset.clicked = "1";
-  }
+  fetchGraph(city.value);
 
   city.value = "";
 });
@@ -299,6 +305,8 @@ document.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     randomPictures();
     fetchMeteo(city.value);
+
+    fetchGraph(city.value);
 
     city.value = "";
   }
