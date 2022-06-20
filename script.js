@@ -318,6 +318,7 @@ buttonClear.addEventListener("click", () => {
 });
 
 window.addEventListener("load", () => {
+  randomPictures(localStorage.LastCityAsk);
   fetchMeteo(localStorage.LastCityAsk);
   fetchGraph(localStorage.LastCityAsk);
 });
