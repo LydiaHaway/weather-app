@@ -333,7 +333,7 @@ const CItyAsk = localStorage.getItem("LastCityAsk");
 
 window.addEventListener("load", () => {
   if (CItyAsk) {
-    randomPictures(localStorage.LastCityAsk);
+    randomPicturesOnLoad(localStorage.LastCityAsk);
     fetchMeteo(localStorage.LastCityAsk);
     fetchGraph(localStorage.LastCityAsk);
   } else {
