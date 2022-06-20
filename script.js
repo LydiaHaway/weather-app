@@ -316,3 +316,8 @@ document.addEventListener("keypress", (e) => {
 buttonClear.addEventListener("click", () => {
   location.reload();
 });
+
+window.addEventListener("load", () => {
+  fetchMeteo(localStorage.LastCityAsk);
+  fetchGraph(localStorage.LastCityAsk);
+});
