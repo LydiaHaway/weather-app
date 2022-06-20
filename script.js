@@ -293,6 +293,18 @@ const fetchGraph = (city) =>
 
 //________________________________________________________________________________________________
 
+function randomPicturesOnLoad() {
+  const containerPictures = document.createElement("div");
+  app.appendChild(containerPictures);
+  containerPictures.setAttribute("class", "containerPictures");
+  const picturesRandom = document.createElement("img");
+  containerPictures.appendChild(picturesRandom);
+  picturesRandom.src = `https://source.unsplash.com/random/?${localStorage.LastCityAsk}`;
+  picturesRandom.alt = "city_illustration";
+}
+
+//________________________________________________________________________________________________
+
 buttonSubmit.addEventListener("click", () => {
   randomPictures();
   fetchMeteo(city.value);
@@ -318,7 +330,7 @@ buttonClear.addEventListener("click", () => {
 });
 
 window.addEventListener("load", () => {
-  randomPictures(localStorage.LastCityAsk);
+  randomPicturesOnLoad();
   fetchMeteo(localStorage.LastCityAsk);
   fetchGraph(localStorage.LastCityAsk);
 });
