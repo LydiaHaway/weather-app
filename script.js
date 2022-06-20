@@ -329,8 +329,16 @@ buttonClear.addEventListener("click", () => {
   location.reload();
 });
 
+const CItyAsk = localStorage.getItem("LastCityAsk");
+
 window.addEventListener("load", () => {
-  randomPicturesOnLoad();
-  fetchMeteo(localStorage.LastCityAsk);
-  fetchGraph(localStorage.LastCityAsk);
+  if (CItyAsk) {
+    randomPictures(localStorage.LastCityAsk);
+    fetchMeteo(localStorage.LastCityAsk);
+    fetchGraph(localStorage.LastCityAsk);
+  } else {
+    randomPictures("san sebastian, PR");
+    fetchMeteo("san sebastian, PR");
+    fetchGraph("san sebastian, PR");
+  }
 });
